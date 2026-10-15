@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form 01 — The plywood chair</title>
+  <meta name="description" content="Explore a photo-inspired plywood swivel chair in interactive 3D. Rotate, zoom, and download the model.">
+  <script type="module" src="./model-viewer.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header><a class="brand" href="./">FORM <span>STUDIES</span></a><span class="edition">OBJECT 001 / PLYWOOD</span></header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow"><span></span> A STUDY IN EVERYDAY DESIGN</p>
+      <h1>One curve.<br>Five wheels.<br><em>A familiar form.</em></h1>
+      <p class="description">A simple wooden chair, re-created in three dimensions. Explore the flowing plywood shell, satin metal base, and small details that bring it together.</p>
+      <a class="download" href="./chair.glb" download>Download 3D model <span aria-hidden="true">↗</span></a>
+      <dl><div><dt>01 / SHELL</dt><dd>Curved plywood</dd></div><div><dt>02 / BASE</dt><dd>Five-spoke swivel</dd></div><div><dt>03 / DETAIL</dt><dd>Twin-wheel casters</dd></div></dl>
+      <p class="note">Modeled in Blender from a single photograph. Proportions are approximate.</p>
+    </section>
+    <section class="stage" aria-label="Interactive chair viewer">
+      <div class="stage-top"><span>THE PLYWOOD CHAIR</span><span id="status" role="status">LOADING 3D MODEL…</span></div>
+      <span class="backdrop" aria-hidden="true">01</span>
+      <model-viewer id="chair" src="./chair.glb" poster="./chair_preview.png" alt="A honey-colored curved plywood chair with a handhold, silver five-spoke base and black twin-wheel casters" camera-controls auto-rotate auto-rotate-delay="3000" rotation-per-second="15deg" camera-orbit="35deg 70deg 2.6m" camera-target="0m 0.6m 0m" field-of-view="30deg" min-camera-orbit="auto 15deg 1.4m" max-camera-orbit="auto 90deg 4m" shadow-intensity="1" shadow-softness="1" exposure="1" interaction-prompt="none" touch-action="pan-y" loading="eager"></model-viewer>
+      <p class="gesture">Drag to rotate <span>·</span> Scroll or pinch to zoom</p>
+      <div class="controls" aria-label="View controls"><button data-view="35deg 70deg 2.6m" class="active" aria-pressed="true">Perspective</button><button data-view="0deg 80deg 2.6m" aria-pressed="false">Front</button><button data-view="90deg 80deg 2.6m" aria-pressed="false">Side</button><button id="rotate" aria-pressed="true">Pause rotation</button></div>
+      <p id="error" hidden>The interactive model couldn’t load. You can still <a href="./chair.glb" download>download the chair</a> or view the preview above.</p>
+    </section>
+  </main>
+  <footer><span>FROM A PHOTOGRAPH TO A FORM.</span><span>Made in Blender · Explore in your browser</span></footer>
+  <script src="./app.js"></script>
+</body>
+</html>
